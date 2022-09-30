@@ -8,6 +8,6 @@ export const HomeContainer = styled.main`
   }
 
   span {
-    color: ${(props) => props.theme['purple-300']};
+    color: ${(props) => props.theme['yellow-300']};
   }
 `

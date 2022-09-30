@@ -101,3 +101,5 @@ export const GithubButton = styled.button`
     }
   }
 `
+
+export const UserLogoutButton = styled.button``

@@ -1,13 +1,18 @@
 import Link from 'next/link'
 import Image from 'next/future/image'
-import logoImg from '../../assets/logo.svg'
+import { useSession, signIn, signOut } from 'next-auth/react'
 import { MagnifyingGlass } from 'phosphor-react'
 import { Github } from '@icons-pack/react-simple-icons'
+
+import logoImg from '../../assets/logo.svg'
+
 import {
   GithubButton,
   HeaderContainer,
   SearchButton,
   SearchContainer,
+  UserLogoutButton,
+  UserlogoutButton,
 } from './styles'
 
 interface HeaderProps {
@@ -15,6 +20,9 @@ interface HeaderProps {
 }
 
 export function Header({ scroll }: HeaderProps) {
+  const { data: session } = useSession()
+  console.log(session)
+
   return (
     <HeaderContainer scroll={scroll}>
       <nav>
@@ -28,10 +36,22 @@ export function Header({ scroll }: HeaderProps) {
             Pesquisar
           </SearchButton>
         </SearchContainer>
-        <GithubButton>
-          <Github size={22} />
-          Entrar
-        </GithubButton>
+        {!session ? (
+          <GithubButton onClick={() => signIn()}>
+            <Github size={22} />
+            Entrar
+          </GithubButton>
+        ) : (
+          <UserLogoutButton onClick={() => signOut()}>
+            <Image
+              src={session.user?.image}
+              alt="logotipo"
+              width={40}
+              height={40}
+            />
+            Sair
+          </UserLogoutButton>
+        )}
       </nav>
     </HeaderContainer>
   )

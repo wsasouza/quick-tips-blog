@@ -1,3 +1,4 @@
+import { SessionProvider } from 'next-auth/react'
 import type { AppProps } from 'next/app'
 import { ThemeProvider } from 'styled-components'
 import { GlobalStyle } from '../styles/global'
@@ -23,13 +24,15 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, [activeColor])
 
   return (
-    <ThemeProvider theme={defaultTheme}>
-      <Header scroll={activeColor} />
-      <Container>
-        <Component {...pageProps} />
-        <GlobalStyle />
-      </Container>
-    </ThemeProvider>
+    <SessionProvider session={pageProps.session}>
+      <ThemeProvider theme={defaultTheme}>
+        <Header scroll={activeColor} />
+        <Container>
+          <Component {...pageProps} />
+          <GlobalStyle />
+        </Container>
+      </ThemeProvider>
+    </SessionProvider>
   )
 }
 
