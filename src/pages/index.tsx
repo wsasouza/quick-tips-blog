@@ -1,6 +1,7 @@
 import Head from 'next/head'
 
 import { HomeContainer } from './../styles/pages/home'
+
 export default function Home() {
   return (
     <>
@@ -10,7 +11,7 @@ export default function Home() {
 
       <HomeContainer>
         <h1>Page Home</h1>
-        <span>Teste de fonte </span>
+        <span>Teste de fonte sfgsg</span>
       </HomeContainer>
     </>
   )

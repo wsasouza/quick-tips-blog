@@ -15,15 +15,17 @@ export const GlobalStyle = createGlobalStyle`
 }
 
   body {
-    background-color: ${(props) => props.theme['gray-800']};
-    color: ${(props) => props.theme['gray-300']};
+    background-color: ${(props) => props.theme['gray-100']};
+    color: ${(props) => props.theme['gray-800']};
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     
   }
 
-  body, input-security, textarea, button {
-    font: 400 1rem 'Nunito Sans', sans-serif;
+  body, input-security, textarea, button, h1, span {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
   }
 
   a {
