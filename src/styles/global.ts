@@ -15,21 +15,25 @@ export const GlobalStyle = createGlobalStyle`
 }
 
   body {
-    background-color: ${(props) => props.theme['gray-100']};
-    color: ${(props) => props.theme['gray-800']};
+    background-color: ${(props) => props.theme.colors['base-background']};
+    color: ${(props) => props.theme.colors['base-text']};
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     
   }
 
   body, input-security, textarea, button, h1, span {
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: ${(props) => props.theme.fonts['1']};
     font-size: 1rem;
     font-weight: 400;
   }
 
   a {
     text-decoration: none;
+  }
+
+  button {
+    border: 0;    
   }
 
 `
