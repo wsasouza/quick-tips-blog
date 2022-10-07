@@ -5,4 +5,5 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  height: 200vh;
 `
