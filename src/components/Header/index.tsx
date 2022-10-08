@@ -33,8 +33,7 @@ export function Header({ scroll }: HeaderProps) {
           <Image src={detail} alt="detail" width={40} />
           <input type="text" placeholder="Buscar conteúdo" />
           <SearchButton>
-            <MagnifyingGlass size={16} weight="bold" />
-            Pesquisar
+            <MagnifyingGlass size={22} weight="bold" />
           </SearchButton>
         </SearchContainer>
         {!session ? (
