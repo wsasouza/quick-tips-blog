@@ -3,10 +3,10 @@ import styled, { css } from 'styled-components'
 export const HeaderContainer = styled.header<{ scroll: boolean }>`
   position: fixed;
   width: 100%;
-  padding: 1rem;
+  padding: 2rem;
   z-index: 2;
   transition: 0.5s;
-  background: ${(props) => props.theme['gray-200']};
+  background: ${(props) => props.theme.colors['base-profile']};
 
   ${(props) => props.scroll && scrollStyle};
 
@@ -22,11 +22,11 @@ export const HeaderContainer = styled.header<{ scroll: boolean }>`
 `
 
 const scrollStyle = css`
-  background: rgba(255, 255, 255, 0.35);
+  background: rgba(31, 38, 135, 0.37);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(10.5px);
   border: 1px solid rgba(10, 10, 10, 0.18);
-  padding: 0.5rem 1rem;
+  padding: 1rem 1rem;
 `
 
 export const SearchContainer = styled.div`
@@ -39,8 +39,10 @@ export const SearchContainer = styled.div`
     height: 2rem;
     min-width: 25rem;
     border-radius: 6px;
-    padding: 1rem;
-    background: ${(props) => props.theme['gray-300']};
+    font-size: ${(props) => props.theme.fontSizes['text-m']};
+    color: ${(props) => props.theme.colors['base-text']};
+    padding: 1.5rem;
+    background: ${(props) => props.theme.colors['base-input']};
   }
 `
 
@@ -48,7 +50,7 @@ export const SearchButton = styled.button`
   display: flex;
   align-items: center;
   gap: 0.25rem;
-  border: 2px solid ${(props) => props.theme['yellow-700']};
+  border: 2px solid ${(props) => props.theme.colors['yellow-700']};
   cursor: pointer;
   height: 2rem;
   padding: 0.5rem 1rem;

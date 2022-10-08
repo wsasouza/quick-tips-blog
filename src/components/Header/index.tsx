@@ -5,6 +5,7 @@ import { MagnifyingGlass } from 'phosphor-react'
 import { Github } from '@icons-pack/react-simple-icons'
 
 import logoImg from '../../assets/logo.svg'
+import detail from '../../assets/detail.svg'
 
 import {
   GithubButton,
@@ -12,7 +13,6 @@ import {
   SearchButton,
   SearchContainer,
   UserLogoutButton,
-  UserlogoutButton,
 } from './styles'
 
 interface HeaderProps {
@@ -30,7 +30,8 @@ export function Header({ scroll }: HeaderProps) {
           <Image src={logoImg} alt="logotipo" width={130} />
         </Link>
         <SearchContainer>
-          <input type="text" />
+          <Image src={detail} alt="detail" width={40} />
+          <input type="text" placeholder="Buscar conteúdo" />
           <SearchButton>
             <MagnifyingGlass size={16} weight="bold" />
             Pesquisar
@@ -44,7 +45,7 @@ export function Header({ scroll }: HeaderProps) {
         ) : (
           <UserLogoutButton onClick={() => signOut()}>
             <Image
-              src={session.user?.image}
+              src={session.user?.image || ''}
               alt="logotipo"
               width={40}
               height={40}
